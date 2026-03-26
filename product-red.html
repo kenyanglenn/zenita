@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Evening Harmony (Rooibos) | Zenvita</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .product-detail-hero { padding: 120px 0 64px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+    .product-gallery { position: sticky; top: 120px; }
+    .product-gallery img { width: 100%; border-radius: var(--border-radius-lg); box-shadow: var(--shadow-md); background: var(--bg-secondary); }
+    .product-summary h1 { font-size: 3rem; margin-bottom: 8px; }
+    .price-tag { font-size: 2rem; color: #E86A33; font-weight: 700; margin: 16px 0; }
+    .inventory-badge { display: inline-block; padding: 4px 12px; background: #E86A33; color: white; border-radius: 4px; font-weight: 600; font-size: 0.85rem; margin-bottom: 24px; }
+    .product-form { display: flex; gap: 16px; margin-top: 32px; }
+    .qty-input { width: 80px; padding: 16px; border: 2px solid #ddd; border-radius: 50px; text-align: center; font-family: var(--font-sans); font-size: 1.1rem; }
+    .btn-cart { flex: 1; border-radius: 50px; font-size: 1.2rem; background: #E86A33; }
+    .btn-cart:hover { background: #cf5826; }
+    .features-list { margin-top: 48px; }
+    .feature-item { border-top: 1px solid #eee; padding: 24px 0; }
+    .feature-item h4 { margin-bottom: 8px; font-family: var(--font-sans); display: flex; align-items: center; justify-content: space-between; cursor: pointer; }
+    .feature-item p { margin: 0; display: none; margin-top: 16px; font-size: 1rem; }
+    @media (max-width: 768px) { .product-detail-hero { grid-template-columns: 1fr; padding-top: 96px; gap: 32px; } .product-gallery { position: relative; top: 0; } }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar scrolled">
+    <div class="container nav-container">
+      <div class="nav-logo">
+        <a href="index.html"><h2>Zenvita<span>.</span></h2></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html#benefits">Benefits</a></li>
+        <li><a href="index.html#ingredients">Ingredients</a></li>
+        <li><a href="index.html#shop">Shop Teas</a></li>
+      </ul>
+      <div class="nav-actions">
+         <span class="btn btn-outline floating-cart-trigger" style="padding: 8px 16px; cursor:pointer;" onclick="document.querySelector('.floating-cart').click();">Cart <span class="cart-badge-inline">(0)</span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Product Detail -->
+  <section class="container product-detail-hero">
+    <div class="product-gallery">
+      <img src="assets/zenvita_redtea.png" alt="Zenvita Evening Harmony Rooibos">
+    </div>
+    
+    <div class="product-summary">
+      <div class="rating" style="margin-bottom: 16px;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i> 4.8 (67 reviews)</div>
+      <h1>Evening Harmony (Rooibos)</h1>
+      <div class="price-tag">$24.00</div>
+      <div class="inventory-badge"><i class="fa-solid fa-moon"></i> Caffeine-Free Option</div>
+      
+      <p>Unwind at the end of the day with our Evening Harmony blend. We swapped out the Black Tea for nutrient-rich South African Rooibos, maintaining our powerful digestion and immunity spices while ensuring deep, restful sleep.</p>
+
+      <ul style="list-style:none; margin: 24px 0; color: var(--text-secondary);">
+        <li><i class="fa-solid fa-check" style="color:var(--brand-green); margin-right:8px;"></i> 100% Caffeine-Free</li>
+        <li><i class="fa-solid fa-check" style="color:var(--brand-green); margin-right:8px;"></i> Calms the Nervous System</li>
+        <li><i class="fa-solid fa-check" style="color:var(--brand-green); margin-right:8px;"></i> 20 Silken Pyramid Bags</li>
+      </ul>
+
+      <div class="product-form">
+        <input type="number" value="1" min="1" class="qty-input">
+        <button class="btn btn-primary btn-cart add-to-cart-btn">Add to Cart - $24.00</button>
+      </div>
+
+      <div class="features-list">
+        <div class="feature-item">
+          <h4 onclick="toggleAccordion(this)">Health Benefits <i class="fa-solid fa-plus"></i></h4>
+          <p>Rooibos is celebrated for its lack of caffeine and high levels of magnesium, which help soothe the nervous system and promote deep, restorative sleep. Accompanied by our ginger and cinnamon mix, it supports healthy overnight digestion.</p>
+        </div>
+        <div class="feature-item">
+          <h4 onclick="toggleAccordion(this)">Ingredients Breakdown <i class="fa-solid fa-plus"></i></h4>
+          <p>
+            <strong>50% Premium Red Rooibos:</strong> Caffeine-free base.<br/>
+            <strong>20% Organic Ginger Root:</strong> Digestion aid.<br/>
+            <strong>10% Lemongrass:</strong> Calming detox agent.<br/>
+            <strong>10% True Cinnamon:</strong> Metabolism booster.<br/>
+            <strong>10% Whole Cloves:</strong> Immunity enhancer.
+          </p>
+        </div>
+        <div class="feature-item">
+          <h4 onclick="toggleAccordion(this)">Brewing Instructions <i class="fa-solid fa-plus"></i></h4>
+          <p>1. Pour 8 oz of 212°F (boiling) water over the sachet.<br>2. Steep for a full 5 minutes (Rooibos never gets bitter).<br>3. Remove sachet, relax your shoulders, and sip slowly an hour before bed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="margin-top: 64px;">
+    <div class="container text-center" style="padding: 24px 0; border-top: 1px solid rgba(255,255,255,0.1);">
+      <h2 style="font-family:var(--font-serif); color:#fff; font-size:2rem; margin:0;">Zenvita<span style="color:var(--brand-gold);">.</span></h2>
+      <div class="footer-bottom">&copy; 2026 Zenvita Wellness. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <div class="floating-cart">
+    <div class="cart-badge">0</div>
+    <i class="fa-solid fa-shopping-bag fa-lg"></i>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    function toggleAccordion(el) {
+      const p = el.nextElementSibling;
+      const icon = el.querySelector('i');
+      if (p.style.display === 'block') { p.style.display = 'none'; icon.classList.replace('fa-minus', 'fa-plus'); } 
+      else { p.style.display = 'block'; icon.classList.replace('fa-plus', 'fa-minus'); }
+    }
+    const qI = document.querySelector('.qty-input');
+    const atc = document.querySelector('.btn-cart');
+    qI.addEventListener('input', () => {
+      let v = parseInt(qI.value); if(isNaN(v) || v < 1) { v = 1; qI.value = 1; }
+      atc.textContent = `Add to Cart - $${(24 * v).toFixed(2)}`;
+    });
+  </script>
+</body>
+</html>
